@@ -7,124 +7,84 @@
   <meta name="description" content="Elektrik Eynova: Elektrik tesisatı, pano montajı, otomasyon ve makine arızaları. Hızlı servis, uygun fiyat, profesyonel çözüm." />
   <meta name="theme-color" content="#0ea5e9" />
   <style>
-    :root{
-      --bg:#0b1220; --card:#111a2b; --muted:#8aa0bf; --text:#e7f2ff;
-      --brand:#0ea5e9; --brand2:#22d3ee; --radius:16px; --shadow:0 10px 30px rgba(0,0,0,.35);
-    }
-    *{box-sizing:border-box} html,body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,system-ui,sans-serif}
-    a{color:inherit;text-decoration:none}
-    .container{width:min(1100px,92%);margin-inline:auto}
-    header{position:sticky;top:0;z-index:50;background:#0b1220cc;backdrop-filter:blur(6px);border-bottom:1px solid #16253d}
-    .nav{display:flex;gap:14px;align-items:center;justify-content:space-between;padding:12px 0}
-    .brand{display:flex;gap:10px;align-items:center;font-weight:800}
-    .brand .logo{font-size:22px}
-    .links a{margin-left:14px;font-weight:600}
-    .hero{background:linear-gradient(180deg,var(--brand),#0b1220);padding:56px 0 40px;text-align:center}
-    .hero h1{margin:0 0 10px;font-size:clamp(28px,5vw,44px)}
-    .hero p{color:#d8e7ff;margin:0 0 18px}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:linear-gradient(135deg,var(--brand),var(--brand2));color:#002133;font-weight:800;box-shadow:var(--shadow)}
-    section{padding:40px 0}
-    .section-title{margin:0 0 18px;font-size:26px}
-    .grid{display:grid;gap:16px}
-    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-    @media (max-width:900px){.grid.cols-3{grid-template-columns:1fr 1fr}.grid.cols-2{grid-template-columns:1fr}}
-    .card{background:var(--card);border:1px solid #16253d;padding:18px;border-radius:var(--radius);box-shadow:var(--shadow)}
-    .muted{color:var(--muted)}
-    form{display:grid;gap:10px}
-    input,textarea{background:#0b1730;border:1px solid #163052;border-radius:12px;padding:12px;color:var(--text);font:inherit}
-    textarea{min-height:120px;resize:vertical}
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap}
-    .wa{display:inline-flex;align-items:center;gap:8px;padding:12px 16px;border-radius:999px;background:#25D366;color:#002e12;font-weight:800}
-    footer{border-top:1px solid #16253d;color:#89a4c7;padding:26px 0 60px}
+    body {margin:0; font-family: Arial, sans-serif; background:#0b1220; color:#e7f2ff;}
+    header {position:sticky; top:0; background:#0b1220cc; backdrop-filter:blur(6px); padding:10px 0; border-bottom:1px solid #16253d;}
+    header .brand {font-weight:bold; font-size:20px; display:flex; align-items:center; gap:10px; justify-content:center;}
+    header .brand span {font-size:28px;}
+    nav {text-align:center; margin-top:6px;}
+    nav a {color:#fff; margin:0 10px; text-decoration:none; font-weight:600;}
+    .hero {padding:60px 20px; text-align:center; background:linear-gradient(180deg,#0ea5e9,#0b1220);}
+    .hero h1 {font-size:36px; margin:0;}
+    .hero p {font-size:18px; margin:10px 0 20px;}
+    .btn {display:inline-block; padding:10px 20px; background:#22d3ee; color:#0b1220; font-weight:bold; border-radius:8px; text-decoration:none;}
+    section {padding:40px 20px; max-width:1000px; margin:auto;}
+    h2 {margin-bottom:20px;}
+    .services {display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
+    .card {background:#111a2b; border-radius:12px; padding:20px; text-align:center;}
+    .card h3 {margin-top:10px;}
+    form {display:grid; gap:10px;}
+    input,textarea {padding:10px; border-radius:8px; border:none;}
+    button {padding:10px; border:none; background:#0ea5e9; color:#fff; font-weight:bold; border-radius:8px; cursor:pointer;}
+    .wa {display:inline-block; margin-top:10px; padding:12px 20px; border-radius:999px; background:#25D366; color:#002e12; font-weight:bold; text-decoration:none;}
+    footer {text-align:center; padding:20px; background:#0ea5e9; margin-top:40px;}
   </style>
 </head>
 <body>
   <header>
-    <div class="container nav">
-      <div class="brand"><span class="logo">⚡</span> <span>Elektrik Eynova</span></div>
-      <nav class="links">
-        <a href="#about">Hakkımızda</a>
-        <a href="#services">Hizmetler</a>
-        <a href="#contact">İletişim</a>
-      </nav>
-    </div>
+    <div class="brand"><span>⚡</span> Elektrik Eynova</div>
+    <nav>
+      <a href="#about">Hakkımızda</a>
+      <a href="#services">Hizmetler</a>
+      <a href="#contact">İletişim</a>
+    </nav>
   </header>
 
   <section class="hero">
-    <div class="container">
-      <h1>Elektrik, Otomasyon ve Makine Arızalarında Tek Adres</h1>
-      <p>Elektrik Eynova; tesisat, pano montajı, otomasyon ve makine arızalarında hızlı ve garantili çözümler sunar.</p>
-      <div class="cta-row">
-        <a class="btn" href="#contact">Teklif Al</a>
-        <!-- WHATSAPP: telefonunu 905xxxxxxxxx formatında yaz -->
-        <a class="wa" href="https://wa.me/905xxxxxxxxx?text=Merhaba%2C%20Elektrik%20Eynova%27dan%20hizmet%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
-      </div>
+    <h1>Elektrik, Otomasyon ve Makine Arızalarında Tek Adres</h1>
+    <p>Elektrik Eynova; tesisat, pano montajı, otomasyon ve makine arızalarında hızlı ve garantili çözümler sunar.</p>
+    <a href="#contact" class="btn">Teklif Al</a>
+    <br>
+    <a class="wa" href="https://wa.me/905385947775?text=Merhaba%2C%20Elektrik%20Eynova%20hizmetleri%20hakkinda%20bilgi%20almak%20istiyorum.%0AIsmim%3A%20%5BAdinizi%20Yazin%5D%0AAdresim%3A%20Istanbul%2C%20Sultanbeyli%20Hamidiye%20Mahallesi" target="_blank">WhatsApp ile Yaz</a>
+  </section>
+
+  <section id="about">
+    <h2>Hakkımızda</h2>
+    <div class="card">
+      <p>Ben <strong>Hasan</strong>. Elektrik Eynova olarak İstanbul Sultanbeyli Hamidiye Mahallesi ve çevresinde
+      elektrik tesisatı, pano montajı, otomasyon ve makine arızalarında hizmet veriyorum. 
+      <strong>Hızlı, güvenli ve ekonomik</strong> çözümler sunarım. Keşif ücretsizdir.</p>
     </div>
   </section>
 
-  <main class="container">
-    <!-- HAKKIMIZDA -->
-    <section id="about">
-      <h2 class="section-title">Hakkımızda</h2>
-      <div class="card">
-        <p class="muted">
-          Elektrik Eynova; konut ve iş yerlerinde elektrik tesisatı, pano montajı, otomasyon ve makine arızalarında
-          <strong>hızlı, güvenli ve ekonomik</strong> çözümler üretir. Keşif ücretsizdir; projeye özel teklif veririz.
-        </p>
-      </div>
-    </section>
+  <section id="services">
+    <h2>Hizmetlerimiz</h2>
+    <div class="services">
+      <div class="card"><h3>Elektrik Tesisatı</h3><p>Ev ve iş yerleri için güvenli tesisat kurulumları.</p></div>
+      <div class="card"><h3>Pano Montajı</h3><p>Sanayi ve konut panolarının montajı ve bakımı.</p></div>
+      <div class="card"><h3>Otomasyon</h3><p>PLC, SCADA ve akıllı ev sistemleri kurulumu.</p></div>
+      <div class="card"><h3>Makine Arızaları</h3><p>Endüstriyel makinelerde hızlı arıza tespiti.</p></div>
+      <div class="card"><h3>Güvenlik & Kamera</h3><p>CCTV, IP kamera, alarm ve erişim sistemleri.</p></div>
+    </div>
+  </section>
 
-    <!-- HİZMETLER -->
-    <section id="services">
-      <h2 class="section-title">Hizmetlerimiz</h2>
-      <div class="grid cols-3">
-        <div class="card"><h3>Elektrik Tesisatı</h3><p class="muted">Ev ve iş yerleri için güvenli tesisat kurulumları.</p></div>
-        <div class="card"><h3>Pano Montajı</h3><p class="muted">Konut ve sanayi panoları; proje, montaj ve bakım.</p></div>
-        <div class="card"><h3>Otomasyon</h3><p class="muted">PLC, HMI, SCADA ve akıllı ev çözümleri.</p></div>
-        <div class="card"><h3>Makine Arızaları</h3><p class="muted">Endüstriyel makinelerde hızlı arıza tespiti ve onarım.</p></div>
-        <div class="card"><h3>Güvenlik & Kamera</h3><p class="muted">CCTV, IP kamera, alarm ve erişim kontrol sistemleri.</p></div>
-        <div class="card"><h3>Bakım & Onarım</h3><p class="muted">Periyodik bakım ve acil arıza desteği (7/24).</p></div>
-      </div>
-    </section>
-
-    <!-- SSS -->
-    <section id="faq">
-      <h2 class="section-title">Sık Sorulanlar</h2>
-      <div class="grid cols-2">
-        <div class="card"><h3>Ne kadar sürede gelirsiniz?</h3><p class="muted">İstanbul içi aynı gün servis için planlama yapıyoruz.</p></div>
-        <div class="card"><h3>Keşif ücretli mi?</h3><p class="muted">Keşif ücretsizdir. Çalışma başlamadan yazılı teklif sunarız.</p></div>
-      </div>
-    </section>
-
-    <!-- İLETİŞİM -->
-    <section id="contact">
-      <h2 class="section-title">İletişim</h2>
-      <div class="grid cols-2">
-        <form onsubmit="event.preventDefault(); alert('Teşekkürler! Mesajınız alındı. En kısa sürede dönüş yapacağız.'); this.reset();">
-          <input required placeholder="Ad Soyad" />
-          <input required type="tel" placeholder="Telefon" />
-          <input required type="email" placeholder="E-posta" />
-          <textarea required placeholder="Mesajınız"></textarea>
-          <button class="btn" type="submit">Gönder</button>
-        </form>
-        <div class="card">
-          <p class="muted">Hızlı ulaşım için WhatsApp butonunu kullanabilirsiniz. Ayrıca aşağıdaki bilgilerden de ulaşabilirsiniz:</p>
-          <p><strong>Telefon:</strong> +90 5xx xxx xx xx</p>
-          <p><strong>E-posta:</strong> iletisim@eynova.com</p>
-          <p><strong>Bölgeler:</strong> İstanbul ve çevresi</p>
-          <div class="cta-row">
-            <a class="wa" href="https://wa.me/905xxxxxxxxx?text=Merhaba%2C%20Elektrik%20Eynova%27dan%20hizmet%20almak%20istiyorum." target="_blank" rel="noopener">WhatsApp ile Yaz</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+  <section id="contact">
+    <h2>İletişim</h2>
+    <form onsubmit="event.preventDefault(); alert('Teşekkürler Hasan! Mesajınız alındı, en kısa sürede dönüş yapacağız.'); this.reset();">
+      <input type="text" placeholder="Adınız" required>
+      <input type="email" placeholder="E-posta" required>
+      <textarea placeholder="Mesajınız" required></textarea>
+      <button type="submit">Gönder</button>
+    </form>
+    <div class="card" style="margin-top:20px;">
+      <p><strong>Telefon:</strong> 0538 594 77 75</p>
+      <p><strong>Adres:</strong> İstanbul, Sultanbeyli / Hamidiye Mahallesi</p>
+      <p><strong>İsim:</strong> Hasan</p>
+      <a class="wa" href="https://wa.me/905385947775?text=Merhaba%2C%20Elektrik%20Eynova%20hizmetleri%20hakkinda%20bilgi%20almak%20istiyorum.%0AIsmim%3A%20%5BAdinizi%20Yazin%5D%0AAdresim%3A%20Istanbul%2C%20Sultanbeyli%20Hamidiye%20Mahallesi" target="_blank">WhatsApp ile Yaz</a>
+    </div>
+  </section>
 
   <footer>
-    <div class="container">
-      © 2025 <strong>Elektrik Eynova</strong> • Tüm hakları saklıdır.
-    </div>
+    © 2025 Elektrik Eynova - Hasan | Tüm hakları saklıdır.
   </footer>
 </body>
 </html>
