@@ -1,100 +1,275 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Elektrik Eynova</title>
-  <meta name="description" content="Elektrik Eynova: Elektrik tesisatı, pano montajı, otomasyon, makine arızaları ve elektronik aletlerin tamiri. İstanbul / Sultanbeyli / Hamidiye." />
+  <title>Elektrik Eynova | Elektrik & Otomasyon</title>
+  <meta name="description" content="Elektrik Eynova: Elektrik tesisatı, pano montajı, otomasyon, makine arızaları ve elektronik aletlerin tamiri. İstanbul / Sultanbeyli / Hamidiye. WhatsApp: 0538 594 77 75" />
   <meta name="theme-color" content="#0ea5e9" />
+
   <style>
-    body {margin:0; font-family: Arial, sans-serif; background:#0b1220; color:#e7f2ff;}
-    header {position:sticky; top:0; background:#0b1220cc; backdrop-filter:blur(6px); padding:10px 0;}
-    header .brand {font-weight:bold; font-size:20px; display:flex; align-items:center; gap:10px; justify-content:center;}
-    header .brand span {font-size:28px;}
-    nav {text-align:center; margin-top:6px;}
-    nav a {color:#fff; margin:0 10px; text-decoration:none; font-weight:600;}
+    :root{
+      --bg:#0b1220;       /* arka plan */
+      --card:#101A2C;     /* kart */
+      --muted:#9db5d7;    /* ikincil metin */
+      --text:#EAF2FF;     /* metin */
+      --brand:#0ea5e9;    /* ana renk */
+      --brand2:#22d3ee;   /* degrade */
+      --accent:#25D366;   /* whatsapp */
+      --radius:18px;
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,Segoe UI,Inter,Roboto,Arial,sans-serif}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin-inline:auto}
+
+    /* NAV */
+    header.nav{position:sticky;top:0;z-index:50;
+      background:linear-gradient(180deg,#0b1220cc,#0b122000);
+      backdrop-filter:blur(8px);border-bottom:1px solid #172740}
+    .nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+    .brand img{width:44px;height:44px;border-radius:10px}
+    .nav-links{display:flex;gap:18px}
+    .nav-links a{padding:10px 12px;border-radius:10px}
+    .nav-links a:hover{background:#0f1b31}
+    .mobile{display:none}
+    @media (max-width:860px){
+      .nav-links{display:none}
+      .mobile{display:block}
+      .mobile-menu{display:none;position:absolute;inset:56px 0 auto 0;background:#081427;border-top:1px solid #172740}
+      .mobile-menu a{display:block;padding:14px 16px}
+      .mobile-menu a:hover{background:#0f1b31}
+      .mobile-menu.show{display:block}
+    }
+
+    /* BUTTONS */
+    .btn{display:inline-flex;align-items:center;gap:.6rem;padding:12px 16px;border-radius:999px;
+      border:1px solid #1a304f;font-weight:700}
+    .btn.primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#00121f;box-shadow:var(--shadow);border:0}
+    .btn.ghost{background:#0d1a2b7a}
 
     /* HERO */
-    .hero {padding:50px 20px; text-align:center; background:linear-gradient(180deg,#0ea5e9,#0b1220);}
-    .hero h1 {font-size:26px; margin:0;}
-    .hero p {font-size:16px; margin:10px 0 18px;}
-    .btn {display:inline-block; padding:10px 20px; background:#22d3ee; color:#0b1220; font-weight:bold; border-radius:8px; text-decoration:none;}
+    .hero{padding:70px 0 38px;display:grid;grid-template-columns:1.1fr .9fr;gap:26px;align-items:center}
+    .hero h1{font-size:clamp(28px,5.2vw,44px);line-height:1.08;margin:0 0 10px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .card{background:#0c172b;border:1px solid #162a48;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow)}
+    .badges{display:flex;gap:10px;flex-wrap:wrap;margin:8px 0 18px}
+    .badge{background:#0f1b31;border:1px solid #17355c;color:#9dc3ff;padding:6px 10px;border-radius:999px;font-size:12px}
+    .hero-illus{aspect-ratio:4/3;border-radius:var(--radius);padding:18px;background:
+      radial-gradient(1200px 600px at -10% -30%,#1b2d52,#0b1220 60%),
+      linear-gradient(180deg,#07101f,#0b1220);
+      border:1px solid #162a48;position:relative;overflow:hidden}
+    .spark{position:absolute;inset:10% 10% auto auto;width:140px;height:140px;border-radius:50%;
+      filter:blur(22px);background:radial-gradient(circle,#22d3ee55,#22d3ee00 70%)}
+    .chip{position:absolute;left:16px;bottom:16px;background:#0f1b31;border:1px solid #17355c;border-radius:12px;padding:10px 12px;font-size:12px;color:#9dc3ff}
+    @media (max-width:900px){ .hero{grid-template-columns:1fr} }
 
-    section {padding:40px 20px; max-width:1000px; margin:auto;}
-    h2 {margin-bottom:20px;}
-    .services {display:grid; gap:20px; grid-template-columns:repeat(auto-fit,minmax(250px,1fr));}
-    .card {background:#111a2b; border-radius:12px; padding:20px; text-align:center;}
-    .card h3 {margin-top:10px;}
+    /* SECTION BASE */
+    section{padding:42px 0}
+    .section-title{font-size:26px;margin:0 0 14px}
 
-    form {display:grid; gap:10px;}
-    input,textarea {padding:10px; border-radius:8px; border:none;}
-    button {padding:10px; border:none; background:#0ea5e9; color:#fff; font-weight:bold; border-radius:8px; cursor:pointer;}
+    /* SERVICES */
+    .grid{display:grid;gap:16px}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){ .grid.cols-3{grid-template-columns:1fr 1fr} }
+    @media (max-width:600px){ .grid.cols-3{grid-template-columns:1fr} }
+    .card{background:var(--card);border:1px solid #162a48;border-radius:16px;padding:18px;box-shadow:var(--shadow)}
+    .icon{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;
+      background:#0f1b31;border:1px solid #17355c;margin-bottom:8px}
 
-    footer {text-align:center; padding:20px; background:#0ea5e9; margin-top:40px; color:#0b1220;}
+    /* WHY US KPIs */
+    .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+    @media (max-width:900px){ .kpis{grid-template-columns:1fr 1fr} }
+    @media (max-width:600px){ .kpis{grid-template-columns:1fr} }
+    .kpi{background:#0e1b33;border:1px solid #17355c;border-radius:14px;padding:14px}
 
-    /* WHATSAPP FLOAT */
-    .wp-float {
-      position: fixed; right: 16px; bottom: 16px;
-      background: #25D366; color: #fff; font-weight:700;
-      padding: 12px 16px; border-radius: 999px;
-      box-shadow: 0 8px 20px rgba(0,0,0,.35); z-index: 9999;
-      display:flex; align-items:center; gap:8px;
+    /* FAQ */
+    details{background:#0e1b33;border:1px solid #17355c;border-radius:14px;padding:12px}
+    summary{cursor:pointer;font-weight:700}
+    details p{margin:10px 0 0;color:#9dc3ff}
+
+    /* CONTACT */
+    form{display:grid;gap:10px}
+    input,textarea{background:#0b1730;border:1px solid #17355c;border-radius:12px;padding:12px;color:var(--text);font:inherit}
+    textarea{min-height:120px;resize:vertical}
+    .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+    @media (max-width:600px){ .two{grid-template-columns:1fr} }
+
+    /* FOOTER */
+    footer{padding:28px 0 60px;border-top:1px solid #172740;color:#9db5d7}
+    .footer-grid{display:grid;gap:20px;grid-template-columns:2fr 1fr 1fr}
+    @media (max-width:900px){ .footer-grid{grid-template-columns:1fr} }
+
+    /* WhatsApp floating */
+    .wp-float{
+      position:fixed;right:16px;bottom:16px;background:#25D366;color:#00230f;
+      font-weight:700;padding:12px 16px;border-radius:999px;box-shadow:0 8px 20px rgba(0,0,0,.35);
+      display:flex;align-items:center;gap:8px;z-index:9999
     }
-    .wp-float img { width:20px; height:20px; }
-    .wp-float:hover { filter: brightness(1.05); }
+    .wp-float img{width:20px;height:20px}
+    .wp-float:hover{filter:brightness(1.05)}
   </style>
 </head>
 <body>
-  <header>
-    <div class="brand">
-  <img src="logo.png" alt="Eynova Logo" width="60">
-  Elektrik Eynova
-</div>
-    <nav>
-      <a href="#services">Hizmetler</a>
-      <a href="#contact">İletişim</a>
-    </nav>
+
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container nav-inner">
+      <div class="brand">
+        <img src="logo.png" alt="Eynova Logo" onerror="this.style.display='none'">
+        <span>Elektrik Eynova</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#services">Hizmetler</a>
+        <a href="#why">Neden Biz?</a>
+        <a href="#faq">SSS</a>
+        <a href="#contact">İletişim</a>
+      </nav>
+      <button class="btn ghost mobile" onclick="document.querySelector('.mobile-menu').classList.toggle('show')">Menü</button>
+    </div>
+    <div class="mobile-menu container">
+      <a href="#services" onclick="this.parentElement.classList.remove('show')">Hizmetler</a>
+      <a href="#why" onclick="this.parentElement.classList.remove('show')">Neden Biz?</a>
+      <a href="#faq" onclick="this.parentElement.classList.remove('show')">SSS</a>
+      <a href="#contact" onclick="this.parentElement.classList.remove('show')">İletişim</a>
+    </div>
   </header>
 
-  <section class="hero">
-    <h1>Elektrik, Otomasyon ve Makine Arızalarında Tek Adres</h1>
-    <p>Elektrik Eynova; tesisat, pano montajı, otomasyon, makine arızaları ve elektronik aletlerin tamirinde hızlı ve garantili çözümler sunar.</p>
-    <a class="btn"
-       href="https://wa.me/905385947775?text=Merhaba%20Elektrik%20Eynova,%20teklif%20almak%20istiyorum."
-       target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
-  </section>
+  <!-- HERO -->
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Elektrik, Otomasyon ve Elektronik Tamirde <br> Güvenilir Çözüm Ortağınız</h1>
+        <p>Elektrik Eynova; tesisat kurulumları, pano montajı, PLC/SCADA otomasyon ve
+          makine arızaları ile elektronik alet tamirinde hızlı ve garantili hizmet verir.</p>
 
-  <section id="services">
-    <h2>Hizmetlerimiz</h2>
-    <div class="services">
-      <div class="card"><h3>Elektrik Tesisatı</h3><p>Ev ve iş yerleri için güvenli tesisat kurulumu.</p></div>
-      <div class="card"><h3>Pano Montajı</h3><p>Sanayi ve konut panolarının montajı ve bakımı.</p></div>
-      <div class="card"><h3>Otomasyon</h3><p>PLC, SCADA ve akıllı ev sistemleri kurulumu.</p></div>
-      <div class="card"><h3>Makine Arızaları</h3><p>Endüstriyel makinelerde hızlı arıza tespiti.</p></div>
-      <div class="card"><h3>Elektronik Aletlerin Tamiri</h3><p>UPS, güç kaynakları, kart arızaları, küçük ev aletleri ve elektronik cihaz onarımları.</p></div>
-    </div>
-  </section>
+        <div class="badges">
+          <span class="badge">7/24 Destek</span>
+          <span class="badge">Usta Ekip</span>
+          <span class="badge">Uygun Fiyat</span>
+          <span class="badge">Sözünde Teslim</span>
+        </div>
 
-  <section id="contact">
-    <h2>İletişim</h2>
-    <form onsubmit="event.preventDefault(); alert('Mesajınız alındı. En kısa sürede dönüş yapacağız.'); this.reset();">
-      <input type="text" placeholder="Adınız" required>
-      <input type="email" placeholder="E-posta" required>
-      <textarea placeholder="Mesajınız" required></textarea>
-      <button type="submit">Gönder</button>
-    </form>
-  </section>
+        <div class="cta">
+          <a class="btn primary"
+             href="https://wa.me/905385947775?text=Merhaba%20Elektrik%20Eynova,%20teklif%20almak%20istiyorum."
+             target="_blank" rel="noopener">WhatsApp’tan Teklif Al</a>
+          <a class="btn ghost" href="#services">Hizmetleri Gör</a>
+        </div>
+      </div>
 
+      <div class="hero-illus">
+        <div class="spark"></div>
+        <div class="chip">⚡ Güvenli Kurulum • Hızlı Servis</div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <h2 class="section-title">Hizmetlerimiz</h2>
+      <div class="grid cols-3">
+        <div class="card">
+          <div class="icon">🏠</div>
+          <h3>Elektrik Tesisatı</h3>
+          <p>Ev/iş yeri için yeni tesisat, tadilat ve kaçak akım çözümleri.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧰</div>
+          <h3>Pano Montajı</h3>
+          <p>Sanayi ve konut panolarında kurulum, revizyon ve bakım.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🤖</div>
+          <h3>Otomasyon</h3>
+          <p>PLC, HMI, SCADA entegrasyonları ve proses otomasyonu.</p>
+        </div>
+        <div class="card">
+          <div class="icon">⚙️</div>
+          <h3>Makine Arızaları</h3>
+          <p>Endüstriyel makinelerde arıza tespiti ve hızlı onarım.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🛠️</div>
+          <h3>Elektronik Tamir</h3>
+          <p>UPS, güç kaynakları, kart tamiri ve küçük ev aletleri.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🧾</div>
+          <h3>Keşif & Teklif</h3>
+          <p>Yerinde inceleme sonrası net fiyatlandırma ve planlama.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY US -->
+    <section id="why">
+      <h2 class="section-title">Neden Elektrik Eynova?</h2>
+      <div class="kpis">
+        <div class="kpi"><strong>10+ yıl deneyim</strong><br><span style="color:var(--muted)">Usta ekip, kalite odaklı iş.</span></div>
+        <div class="kpi"><strong>Hızlı dönüş</strong><br><span style="color:var(--muted)">Aynı gün keşif & servis.</span></div>
+        <div class="kpi"><strong>Garantili işçilik</strong><br><span style="color:var(--muted)">Parça ve işçilik garantisi.</span></div>
+        <div class="kpi"><strong>Şeffaf fiyat</strong><br><span style="color:var(--muted)">Sürpriz yok, net teklif.</span></div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <h2 class="section-title">Sık Sorulan Sorular</h2>
+      <div class="grid">
+        <details>
+          <summary>Hangi bölgelerde hizmet veriyorsunuz?</summary>
+          <p>Öncelikli olarak İstanbul Sultanbeyli ve çevresi; talebe göre Anadolu/Avrupa yakası.</p>
+        </details>
+        <details>
+          <summary>Acil arızalara ne kadar sürede geliyorsunuz?</summary>
+          <p>Aynı gün içinde dönüş yapıp mümkün olan en kısa sürede müdahale ediyoruz.</p>
+        </details>
+        <details>
+          <summary>Keşif ve fiyatlandırma nasıl yapılıyor?</summary>
+          <p>Yerinde ücretsiz keşif sonrası net fiyat ve zaman planı paylaşıyoruz.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2 class="section-title">İletişim</h2>
+      <form onsubmit="event.preventDefault(); alert('Mesajınız alındı. En kısa sürede dönüş yapacağız.'); this.reset();">
+        <div class="two">
+          <input type="text" placeholder="Adınız" required>
+          <input type="email" placeholder="E-posta" required>
+        </div>
+        <textarea placeholder="Mesajınız" required></textarea>
+        <button class="btn primary" type="submit">Mesaj Gönder</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
   <footer>
-    © 2025 Elektrik Eynova. Tüm hakları saklıdır.  
-    <br><strong>Adres:</strong> İstanbul / Sultanbeyli / Hamidiye  
-    <br><strong>Telefon:</strong> 0538 594 77 75
+    <div class="container footer-grid">
+      <div>
+        <strong>Elektrik Eynova</strong><br>
+        Elektrik & Otomasyon Çözümleri
+      </div>
+      <div>
+        <strong>İletişim</strong><br>
+        Tel: 0538 594 77 75<br>
+        <a href="https://wa.me/905385947775" target="_blank" rel="noopener">WhatsApp mesaj gönder</a>
+      </div>
+      <div>
+        <strong>Adres</strong><br>
+        İstanbul / Sultanbeyli / Hamidiye
+      </div>
+    </div>
   </footer>
 
-  <!-- WhatsApp Floating Button -->
+  <!-- Floating WhatsApp -->
   <a id="wpFloat" class="wp-float" target="_blank" rel="noopener">
-    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WA">
-    WhatsApp
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp--v1.png" alt="WA"> WhatsApp
   </a>
   <script>
     (function () {
